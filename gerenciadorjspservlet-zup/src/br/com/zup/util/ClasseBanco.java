@@ -50,4 +50,15 @@ public class ClasseBanco {
 		
 	}
 
+	public ModelEmpresa buscaEmpresaPorId(Integer id) {
+		
+		for (ModelEmpresa modelEmpresa : listaEmpresas) {
+			if(modelEmpresa.getId() == id) {
+				return modelEmpresa;
+			}
+		}
+		
+		return null;
+	}
+
 }
