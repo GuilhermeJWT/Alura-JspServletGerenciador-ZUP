@@ -3,6 +3,7 @@ package br.com.zup;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,8 +29,9 @@ public class EmpresaServlet extends HttpServlet {
 		
 		banco.adiciona(modelEmpresa);
 		
-		PrintWriter resposta = response.getWriter();
-		resposta.println("<html><body>Empresa Cadastrada: " + nomeEmpresa+ "</body></html>");
+		RequestDispatcher retorno =  request.getRequestDispatcher("/NovaEmpresa.jsp");	
+		request.setAttribute("empresa", modelEmpresa.getNome());
+		retorno.forward(request, response);
 		
 	}
 

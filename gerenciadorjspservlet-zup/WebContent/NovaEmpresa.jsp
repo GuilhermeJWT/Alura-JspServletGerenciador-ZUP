@@ -7,15 +7,6 @@
 <title>Nova Página</title>
 </head>
 <body>
-
-<%
-
-	String 	nomeEmpresa = "Systems GS";
-	System.out.println(nomeEmpresa);
-
-%>
-
-	Empresa: <%= nomeEmpresa %>  cadastrada com Sucesso
-
+	Empresa: ${empresa} cadastrada com Sucesso
 </body>
 </html>
